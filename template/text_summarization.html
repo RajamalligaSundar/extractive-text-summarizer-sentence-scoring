@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Summarization</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='files/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='files/css/style.css')}}">
+</head>
+<body>
+  <div class="text-center">
+	  <img id="header" src="static/files/image/header.png" alt="header.png" width="200" height="50" align="right">
+    <h1 align="left">Text Summarizer</h1>
+  </div>
+  <div class="horizontal-line"><hr></div>
+
+     <div class="col-md-offset-3 col-md-5" style="margin-top:50px">
+        <form action="/text_fetch" method="post" enctype="multipart/form-data">
+        <h3 class="page-header text-primary">Text Summarizer</h3>
+
+  <div class="col-md-8" style="margin-top:20px">
+        <div class="form-group">
+            <label class="form-label">Input Word document</label><br><br>
+            <input type="file" name="upload_text" accept="application/docx"/>
+        </div>
+      <div class="form-group">
+                <div class="buttons">
+                <input type="submit" name="submit" value="Submit" class="btn btn-success">
+                <input type="reset" name="reset" value="Clear" class="btn btn-danger">
+                </div>
+      </div>
+  </div>
+        </form>
+   </div>
+
+</body>
+</html>

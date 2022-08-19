@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fetch-URL</title>
+     <link rel="stylesheet" href="{{url_for('static', filename='files/css/bootstrap.min.css')}}">
+     <link rel="stylesheet" href="{{url_for('static', filename='files/css/style.css')}}">
+</head>
+<body>
+    <div class="text-center">
+	  <img id="header" src="static/files/image/header.png" alt="header.png" width="200" height="50" align="right">
+    <h1 align="left">Text Summarizer</h1>
+    </div>
+    <div class="horizontal-line"><hr></div>
+    <div class="col-md-offset-3 col-md-11" style="margin-top:20px" align="justify">
+
+        <table class="table table-bordered table-hover" style="width:100%">
+
+
+        <tr>
+          <th>URL</th>
+            <td>{{url}}</td>
+        </tr>
+
+        <tr>
+          <th>Summary</th>
+            <td>{{transformed_summary}}</td>
+        </tr>
+
+             <tr>
+          <th>Rogue Score</th>
+            <td>{{score}}</td>
+        </tr>
+
+        </table>
+
+        <button onclick="window.print()" class="print-button"> Print Summary <br> <br><span class="print-icon"></span></button>
+
+        <br><br>
+     <form action="\">
+        <input type="submit" value="Back to Home Page" class="btn btn-primary">
+      </form>
+
+    </div>
+</body>
+</html>
+
+
+

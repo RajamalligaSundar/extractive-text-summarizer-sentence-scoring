@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PDF Summarization</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='files/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='files/css/style.css')}}">
+</head>
+<body>
+  <div class="text-center">
+	  <img id="header" src="static/files/image/header.png" alt="header.png" width="200" height="50" align="right">
+    <h1 align="left">Text Summarizer</h1>
+  </div>
+    <div class="horizontal-line"><hr></div>
+
+  <div class="col-md-offset-3 col-md-5" style="margin-top:50px">
+        <form action="/pdf_fetch" method="post" enctype="multipart/form-data">
+        <h3 class="page-header text-primary">Text Summarizer</h3>
+
+            {%with messages = get_flashed_messages(with_categories=true)%}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{category}}">{{message}}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+  <div class="col-md-8" style="margin-top:20px">
+        <div class="form-group">
+            <label class="form-label" for="customFile">Input PDF files</label><br><br>
+            <input type="file" name="upload" accept="application/pdf"/>
+        </div>
+      <div class="form-group">
+                <div class="buttons">
+                <input type="submit" name="submit" value="Submit" class="btn btn-success">
+                <input type="reset" name="reset" value="Clear" class="btn btn-danger">
+                </div>
+      </div>
+  </div>
+        </form>
+   </div>
+
+</body>
+</html>
+
+
+<script>
+    $(document).ready(function(){
+        $(".alert").hide(4000);
+     });
+</script>

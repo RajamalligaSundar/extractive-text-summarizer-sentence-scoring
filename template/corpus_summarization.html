@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Corpus Summarization</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='files/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='files/css/style.css')}}">
+</head>
+<body>
+  <div class="text-center">
+	  <img id="header" src="static/files/image/header.png" alt="header.png" width="200" height="50" align="right">
+    <h1 align="left">Text Summarizer</h1>
+  </div>
+  <div class="horizontal-line"><hr></div>
+
+          <form action="/corpus_fetch" method="POST" autocomplete="off">
+             <div class=" col-md-8" style="margin-top:20px">
+            <h3 class="page-header text-primary">Summarize Corpus</h3><br>
+
+            <div class="form-outline">
+                <textarea name="corpus" class="form-control" id="corpus" rows="8"></textarea>
+                <label class="form-label" for="corpus"></label>
+            </div>
+
+            <div class="form-group">
+                <div class="buttons">
+                <input type="submit" name="submit" value="Submit" class="btn btn-success">
+                <input type="reset" name="reset" value="Clear" class="btn btn-danger">
+                </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
